@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<script>window.location.replace('dashboard.html');</script>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#10263f" />
+  <title>Punjab SmartRoute Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">S<span>R</span></div><div><strong>SmartRoute</strong><small>Punjab intelligence</small></div></div>
+      <div class="workspace-label">WORKSPACE <span>LIVE</span></div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-item active" data-view="Overview"><i>◉</i> Overview <b>⌂</b></button>
+        <button class="nav-item" data-view="Route planner"><i>⌁</i> Route planner</button>
+        <button class="nav-item" data-view="Weather & warnings"><i>☼</i> Weather & warnings <em>3</em></button>
+        <button class="nav-item" data-view="Vehicle safety"><i>◌</i> Vehicle safety</button>
+        <button class="nav-item" data-view="Traffic intelligence"><i>≋</i> Traffic intelligence</button>
+        <button class="nav-item" data-view="Accessibility"><i>♿</i> Accessibility</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <button class="nav-item" data-view="Alerts"><i>◒</i> Alerts & notifications <em>5</em></button>
+        <button class="nav-item" data-view="Settings"><i>⚙</i> Settings</button>
+        <div class="operator"><div class="avatar">AS</div><div><strong>Amrit S.</strong><small>Fleet operator</small></div><span>•••</span></div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar"><div class="crumb"><span>Punjab /</span> Operations overview</div><div class="top-actions"><div class="status"><span class="pulse"></span> Data synced <strong>2m ago</strong></div><button class="icon-button" title="Notifications">◔<b></b></button><button class="language">EN <span>⌄</span></button></div></header>
+      <section class="page-heading"><div><p class="eyebrow">SUNDAY, 23 AUGUST 2026 <span class="live-dot"></span> LIVE NETWORK</p><h1>Good morning, Amrit.</h1><p class="subtitle">Here is your operational picture across Punjab today.</p></div><button class="primary-button" id="planRoute">＋ Plan a route</button></section>
+
+      <section class="metric-grid">
+        <article class="metric-card"><div class="metric-head"><span>ACTIVE FLEET</span><span class="metric-icon navy">↗</span></div><div class="metric-value">24 <small>/ 28</small></div><div class="metric-foot"><span class="trend up">↑ 8.4%</span> vs last week <span class="sparkline navy-line">▁▂▃▂▄▅▆</span></div></article>
+        <article class="metric-card"><div class="metric-head"><span>ON-TIME RATE</span><span class="metric-icon green">✓</span></div><div class="metric-value">91.8<span>%</span></div><div class="metric-foot"><span class="trend up">↑ 2.1%</span> vs last week <span class="sparkline green-line">▂▃▃▄▃▅▆</span></div></article>
+        <article class="metric-card warning-card"><div class="metric-head"><span>ROAD RISK INDEX</span><span class="metric-icon orange">!</span></div><div class="metric-value">Moderate</div><div class="metric-foot"><span class="trend warning">↑ 12.6%</span> due to weather <span class="sparkline orange-line">▂▂▃▆▅▆▇</span></div></article>
+        <article class="metric-card"><div class="metric-head"><span>OPEN ALERTS</span><span class="metric-icon red">◇</span></div><div class="metric-value">05</div><div class="metric-foot"><span class="trend down">↓ 3</span> since yesterday <span class="sparkline red-line">▆▅▅▄▃▂▂</span></div></article>
+      </section>
+
+      <section class="dashboard-grid">
+        <article class="panel map-panel"><div class="panel-header"><div><h2>Network conditions</h2><p>Live road intelligence · Updated 2 min ago</p></div><div class="map-controls"><button class="filter active" data-layer="risk">Risk</button><button class="filter" data-layer="traffic">Traffic</button><button class="filter" data-layer="access">Access</button><button class="expand" title="Expand map">⛶</button></div></div><div class="map-canvas" id="mapCanvas"><div class="map-grid"></div><div class="route-line route-a"></div><div class="route-line route-b"></div><div class="route-line route-c"></div><div class="district d1">AMRITSAR</div><div class="district d2">JALANDHAR</div><div class="district d3">LUDHIANA</div><div class="district d4">PATIALA</div><div class="district d5">BATHINDA</div><div class="district d6">MOHALI</div><span class="map-pin pin1">●<label>Amritsar</label></span><span class="map-pin pin2">●<label>Ludhiana</label></span><span class="map-pin pin3">●<label>Mohali</label></span><span class="map-pin pin4 risk-pin">●<label>Rain risk</label></span><div class="map-legend"><span><i class="legend-green"></i> Clear</span><span><i class="legend-yellow"></i> Caution</span><span><i class="legend-red"></i> Disruption</span></div><div class="map-layer-note" id="layerNote">Showing weather and road risk overlay</div></div></article>
+        <article class="panel alerts-panel"><div class="panel-header"><div><h2>Priority alerts</h2><p>Needs your attention</p></div><button class="text-button" id="viewAlerts">View all <span>→</span></button></div><div class="alert-list"><div class="alert-item high"><span class="alert-symbol">!</span><div><strong>High heat advisory</strong><p>NH-44 · Ludhiana to Ambala</p><small>Valid until 18:00 today</small></div><span class="alert-arrow">›</span></div><div class="alert-item medium"><span class="alert-symbol">≈</span><div><strong>Rainfall expected</strong><p>Jalandhar · Hoshiarpur district</p><small>Likely in 2 hours</small></div><span class="alert-arrow">›</span></div><div class="alert-item low"><span class="alert-symbol">◌</span><div><strong>Road restriction</strong><p>Bridge repair · SH-12</p><small>Expected clearance tomorrow</small></div><span class="alert-arrow">›</span></div></div><button class="outline-button" id="acknowledge">Acknowledge all alerts</button></article>
+      </section>
+
+      <section class="lower-grid"><article class="panel weather-panel"><div class="panel-header"><div><h2>Regional weather</h2><p>Conditions affecting route safety</p></div><button class="text-button">Punjab <span>⌄</span></button></div><div class="weather-main"><div class="current-weather"><span class="weather-icon">☼</span><div><strong>32°</strong><span>Partly cloudy</span></div></div><div class="weather-details"><div><span>Humidity</span><strong>58%</strong></div><div><span>Wind</span><strong>14 km/h</strong></div><div><span>Visibility</span><strong>8.2 km</strong></div></div></div><div class="forecast"><div><span>NOW</span><b>☼</b><strong>32°</strong></div><div><span>13:00</span><b>☼</b><strong>33°</strong></div><div><span>16:00</span><b>◒</b><strong>31°</strong></div><div><span>19:00</span><b>☾</b><strong>28°</strong></div><div><span>22:00</span><b>☾</b><strong>26°</strong></div></div></article><article class="panel route-panel"><div class="panel-header"><div><h2>Upcoming routes</h2><p>Today's delivery schedule</p></div><button class="text-button" id="viewRoutes">View schedule <span>→</span></button></div><div class="route-list"><div class="route-row"><div class="route-status on-time"></div><div class="route-info"><strong>Amritsar <span>→</span> Ludhiana</strong><small>Vehicle PB-08-AQ-1421 · 186 km</small></div><div class="route-time"><strong>ETA 11:42</strong><small>On schedule</small></div></div><div class="route-row"><div class="route-status caution"></div><div class="route-info"><strong>Mohali <span>→</span> Bathinda</strong><small>Vehicle PB-65-K-9088 · 218 km</small></div><div class="route-time caution-text"><strong>ETA 14:18</strong><small>+24 min delay</small></div></div><div class="route-row"><div class="route-status on-time"></div><div class="route-info"><strong>Jalandhar <span>→</span> Patiala</strong><small>Vehicle PB-10-F-3340 · 157 km</small></div><div class="route-time"><strong>ETA 16:05</strong><small>On schedule</small></div></div></div></article></section>
+      <footer><span>Punjab SmartRoute Intelligence</span><span>Data confidence <strong>94%</strong> · All systems operational</span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast">Route planner is ready for your next trip.</div>
+  <script src="app.js"></script>
+</body>
+</html>
